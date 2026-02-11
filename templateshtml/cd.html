@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sega CD Emulator</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="game"></div>
+    </div>
+
+    <script>
+        window.EJS_player = '#game';
+        
+        // Use the 'segacd' core
+        window.EJS_core = 'segacd'; 
+        
+        // Replace with your Sega CD game link. 
+        // Highly recommended: Use a ZIP containing a .chd file or a .cue/.bin pair.
+        window.EJS_gameUrl = '';
+        
+        /**
+         * IMPORTANT: Sega CD REQUIRES a BIOS file.
+         * Common names: bios_CD_US.bin, bios_CD_EU.bin, bios_CD_JP.bin
+         * You can often zip all three together and link them here.
+         */
+        window.EJS_biosUrl = ''; 
+
+        window.EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/';
+        
+        window.EJS_startOnLoaded = true;
+        
+        // CD games are large; threading helps prevent audio stuttering during FMV scenes.
+        window.EJS_threads = true; 
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
+
+</body>
+</html>
