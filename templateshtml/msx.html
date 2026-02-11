@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSX Emulator</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="game"></div>
+    </div>
+
+    <script>
+        window.EJS_player = '#game';
+        
+        // Use the 'msx' core
+        window.EJS_core = 'msx'; 
+        
+        // Replace with your MSX ROM link (usually .rom, .mx1, .mx2, or .dsk inside a .zip)
+        window.EJS_gameUrl = '';
+        
+        /**
+         * MSX often requires system ROMs (MSX.ROM, MSX2.ROM, etc.)
+         * If your game is a .dsk (Disk) file, the BIOS is mandatory.
+         */
+        window.EJS_biosUrl = ''; 
+
+        window.EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/';
+        
+        window.EJS_startOnLoaded = true;
+        
+        // Necessary if the game requires keyboard input rather than just a joystick
+        window.EJS_keyboard = true; 
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
+
+</body>
+</html>
