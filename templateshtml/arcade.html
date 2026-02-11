@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Emulator (MAME)</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="game"></div>
+    </div>
+
+    <script>
+        window.EJS_player = '#game';
+        
+        // Use 'mame' or 'arcade' core
+        window.EJS_core = 'arcade'; 
+        
+        // Replace with your Arcade ROM link (.zip)
+        // Note: For Arcade, keep the file inside the ZIP named exactly what MAME expects (e.g., dkong.zip)
+        window.EJS_gameUrl = '';
+        
+        // Some Arcade games (like Neo Geo) require a bios (neogeo.zip) 
+        // If not using Neo Geo, you can leave this blank.
+        window.EJS_biosUrl = ''; 
+
+        window.EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/';
+        
+        window.EJS_startOnLoaded = true;
+        
+        // Arcade specific: You often need to "Insert Coin"
+        // This setting ensures the virtual buttons are available
+        window.EJS_gamePad = true; 
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
+
+</body>
+</html>
