@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atari 7800 Emulator</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="game"></div>
+    </div>
+
+    <script>
+        window.EJS_player = '#game';
+        
+        // Use the 'atari7800' core
+        window.EJS_core = '7800'; 
+        
+        // Replace with your Atari 7800 ROM link (usually .a78 or .bin)
+        window.EJS_gameUrl = '';
+        
+        // IMPORTANT: The 7800 usually needs the BIOS to boot commercial games.
+        // The file is typically named '7800 BIOS.bin'
+        window.EJS_biosUrl = ''; 
+
+        window.EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/';
+        
+        window.EJS_startOnLoaded = true;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
+
+</body>
+</html>
