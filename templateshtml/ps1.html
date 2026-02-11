@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PS1 Emulator</title>
+</head>
+<body style="margin:0; background-color:black;">
+    <div style="width:100vw; height:100vh;">
+        <div id="game"></div>
+    </div>
+
+    <script>
+        EJS_player = '#game';
+        EJS_core = 'pcsx_rearmed'; // The correct core name for PS1
+        EJS_gameUrl = 'url to game';
+        
+        // PS1 REQUIRES a BIOS file to work. 
+        // You should upload the 'scph5501.bin' file to your GitHub releases 
+        // just like you did with the game, then paste that link below.
+        EJS_biosUrl = 'https://github.com/Pitchfork7/resevil/releases/download/biosfiles/scph1001.bin'; 
+
+        EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/';
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
+</body>
+</html>
