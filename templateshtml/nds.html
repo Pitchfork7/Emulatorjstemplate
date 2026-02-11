@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nintendo DS Emulator</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="game"></div>
+    </div>
+
+    <script>
+        window.EJS_player = '#game';
+        
+        // Use the 'nds' core (DeSmuME)
+        window.EJS_core = 'nds'; 
+        
+        // Replace with your DS ROM link (usually .nds or .zip)
+        window.EJS_gameUrl = '';
+        
+        // Nintendo DS generally does not require a BIOS to run in EmulatorJS
+        window.EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/';
+        
+        window.EJS_startOnLoaded = true;
+
+        // DS emulation is very heavy; threading is a must
+        window.EJS_threads = true; 
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
+
+</body>
+</html>
