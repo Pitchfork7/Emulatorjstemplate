@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sega 32X Emulator</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="game"></div>
+    </div>
+
+    <script>
+        window.EJS_player = '#game';
+        
+        // Use the 'sega32x' core (usually PicoDrive)
+        window.EJS_core = 'sega32x'; 
+        
+        // Replace with your 32X ROM link (usually .32x or .zip)
+        window.EJS_gameUrl = '';
+        
+        // Optional: 32X BIOS files
+        // Often requires 3zip/bin files: 32X_G_BIOS.bin, 32X_M_BIOS.bin, 32X_S_BIOS.bin
+        window.EJS_biosUrl = ''; 
+
+        window.EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/';
+        
+        window.EJS_startOnLoaded = true;
+        
+        // Highly recommended as 32X emulation is more intensive than standard Genesis
+        window.EJS_threads = true; 
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
+
+</body>
+</html>
