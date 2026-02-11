@@ -1,25 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>PS1 Emulator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS1 Emulator - Resident Evil</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
 </head>
-<body style="margin:0; background-color:black;">
-    <div style="width:100vw; height:100vh;">
+<body>
+
+    <div id="game-container">
         <div id="game"></div>
     </div>
 
     <script>
-        EJS_player = '#game';
-        EJS_core = 'pcsx_rearmed'; // The correct core name for PS1
-        EJS_gameUrl = 'url to game';
+        // Setup configuration
+        window.EJS_player = '#game';
+        window.EJS_core = 'pcsx_rearmed'; // High-performance PS1 core
         
-        // PS1 REQUIRES a BIOS file to work. 
-        // You should upload the 'scph5501.bin' file to your GitHub releases 
-        // just like you did with the game, then paste that link below.
-        EJS_biosUrl = 'https://github.com/Pitchfork7/resevil/releases/download/biosfiles/scph1001.bin'; 
+        // Game and BIOS Links
+        window.EJS_gameUrl = '';
+        window.EJS_biosUrl = '';
+        
+        // Path to the EmulatorJS data files
+        window.EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/';
 
-        EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/';
+        // Performance & UI Settings
+        window.EJS_startOnLoaded = true;   // Auto-start after download
+        window.EJS_multitap = false;      // Set to true only for 4-player games
+        window.EJS_mouse = false;         // Prevents mouse cursor interference
     </script>
+
     <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
+
 </body>
 </html>
