@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atari Jaguar Emulator</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="game"></div>
+    </div>
+
+    <script>
+        window.EJS_player = '#game';
+        
+        // Use the 'jaguar' core
+        window.EJS_core = 'jaguar'; 
+        
+        // Replace with your Jaguar ROM link (usually .j64, .jag, or .zip)
+        window.EJS_gameUrl = '';
+        
+        // Jaguar BIOS is often named 'jagboot.rom' or 'jaguar.boot'
+        window.EJS_biosUrl = ''; 
+
+        window.EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/';
+        
+        window.EJS_startOnLoaded = true;
+        
+        // Highly recommended for Jaguar to handle the multi-processor emulation
+        window.EJS_threads = true; 
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/EmulatorJS/EmulatorJS@latest/data/loader.js"></script>
+
+</body>
+</html>
